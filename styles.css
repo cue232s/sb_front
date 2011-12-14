@@ -1,0 +1,12 @@
+@charset "utf-8";
+#workspace {
+	/* [disabled]background-color: #FFF; */
+	height: 400px;
+	border-radius: 6px;
+	
+}
+.customizaiton {
+	background-color: #CCC;
+	height: 400px;
+	border-radius: 6px;
+}

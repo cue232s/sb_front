@@ -19,6 +19,8 @@
 <link rel="stylesheet" href="theme/supersized.shutter.css" type="text/css" media="screen" />
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="js/navi.js"></script>
+
 <script type="text/javascript" src="js/supersized.3.2.6.js"></script>
 <script type="text/javascript" src="theme/supersized.shutter.js"></script>
 <script type="text/javascript">
@@ -72,12 +74,16 @@
 		</script>
 <script type="application/javascript">
 		
-			$(document).ready(function(e) {
-            	$('body').prepend('<div id="navigationbar"></div>');
-
-            });
-		
-		</script>
+			$(document).ready(function() {
+            	$('body').prepend('<div id="navbarwrapper" style="height:40px;"> <div id="navigationbar" style="height:0;"></div></div>');
+				$('#navbarwrapper').hover(function(){
+					$('#navigationbar').animate({height:'40px'});
+            	});
+				$('#navbarwrapper').mouseleave(function(){
+					$('#navigationbar').animate({height:'0px'});
+				});
+			});
+</script>
 </head>
 
 

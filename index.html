@@ -20,9 +20,12 @@
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.min.js"></script>
 <script type="text/javascript" src="js/navi.js"></script>
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css" type="text/css" />
+
 
 <script type="text/javascript" src="js/supersized.3.2.6.js"></script>
 <script type="text/javascript" src="theme/supersized.shutter.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap-twipsy.js"></script>
 <script type="text/javascript">
 			
 			jQuery(function($){
@@ -75,13 +78,31 @@
 <script type="application/javascript">
 		
 			$(document).ready(function() {
-            	$('body').prepend('<div id="navbarwrapper" style="height:40px;"> <div id="navigationbar" style="height:0;"></div></div>');
-				$('#navbarwrapper').hover(function(){
-					$('#navigationbar').animate({height:'40px'});
+/*            	$('body').prepend('<div id="navbarwrapper" class="topbar"> <div id="navigationbar" style="height:0;"></div></div>');
+*/			/*	$('.topbar').hover(function(){
+					$('.topbar .fill').animate({height:'40px'});
             	});
-				$('#navbarwrapper').mouseleave(function(){
-					$('#navigationbar').animate({height:'0px'});
+				$('.topbar').mouseleave(function(){
+					$('.topbar .fill').animate({height:'0px'});
+				});*/
+				
+				$('#testit').twipsy({'placement' : 'below'});
+				$('#testit').twipsy('show');
+				
+				var winHeight = $(window).height();
+				
+				var logoPos = winHeight - 120;
+			
+				$('#lwr-logo').css({'top' : logoPos, 'position' : 'absolute'});
+				
+				$(window).resize(function() {
+									var winHeight = $(window).height();
+
+					var logoPos = winHeight - 120;
+					$('#lwr-logo').css({'top' : logoPos, 'position' : 'absolute'});
 				});
+				
+
 			});
 </script>
 </head>
@@ -115,29 +136,72 @@ div#navigationbar {
 	
 }
 
+body {
+	padding-top: 40px;	
+}
 
 
+
+#lwr-logo {
+	background-attachment: scroll;
+	background-image: url(img/bg-black.png);
+	background-repeat: repeat;
+	width: 300px;
+	height: 100px;
+}
+#lwr-logo img {
+	width: 250px;
+	margin-right: auto;
+	margin-left: auto;
+	float: none;
+}
+#contentarea {
+	background-image: url(img/bg-black.png);
+	background-repeat: repeat;
+	margin-top: 20px;	
+}
 </style>
 
 <body>
 
-<!--Demo styles (you can delete this block)-->
+ <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="#"><img src="img/xSB_logo_white_light_blue_border.png" width="20" height="22">Suit Brokers</a>
+          <ul class="nav">
+            <li class="active"><a href="#">Store</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+<form action="" class="pull-right">
+            <input class="input-small" type="text" placeholder="Username">
+            <input class="input-small" type="password" placeholder="Password">
+            <button class="btn" type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </div><!--Demo styles (you can delete this block)-->
 
-<ul id="demo-block">
-  <li><a href="http://buildinternet.com/project/supersized/" target="_blank"><img src="img/supersized-logo.png"/></a></li>
-  <li>Photographers: <a href="http://cargocollective.com/mariakazvan" target="_blank">Maria Kazvan</a>, <a href="http://colindub.com" target="_blank">Colin Wojno</a>, &amp; <a href="http://brookeshaden.com/" target="_blank">Brooke Shaden</a></li>
-</ul>
+<div id="contentarea" class="container" style="height:1200px">
+    
+    
+    </div>
+
+
 
 <!--End of styles--> 
 
 <!--Thumbnail Navigation-->
 
 <!--Arrow Navigation--> 
-<a id="prevslide" class="load-item"></a> <a id="nextslide" class="load-item"></a>
+<!--<a id="prevslide" class="load-item"></a> <a id="nextslide" class="load-item"></a>
 <div id="thumb-tray" class="load-item">
   <div id="thumb-back"></div>
   <div id="thumb-forward"></div>
-</div>
+</div>-->
+
+<div id="lwr-logo">
+<img src="img/SB_logo_white_100pix.png" /></div>
 
 <!--Time Bar-->
 

@@ -88,17 +88,10 @@
 				$('#testit').twipsy('show');
 				
 				var winHeight = $(window).height();
-				
-				var logoPos = winHeight - 120;
-			
-				$('#lwr-logo').css({'top' : logoPos, 'position' : 'absolute'});
-				
-				$(window).resize(function() {
-									var winHeight = $(window).height();
 
 					var logoPos = winHeight - 120;
-					$('#lwr-logo').css({'top' : logoPos, 'position' : 'absolute'});
-				});
+					$('#lwr-logo').css({'top' : logoPos, 'position': "fixed"});
+				
 				
 
 			});
